@@ -19,21 +19,21 @@ Principal() {
      echo $dir
      echo $kernel
      echo $arquitetura
-	 echo $jails
+     echo $jails
      echo
      echo "Opcoes:"
      echo "1. UnbanIP"
-	 echo "2. BanIP"
-	 echo "3. Sair"
-	 echo 
+     echo "2. BanIP"
+     echo "3. Sair"
+     echo 
      echo -n "Entre com a opcao desejada => "
      read opcao
      echo
      case $opcao in
-        1) UnbanIP ;;
-		2) BanIP ;;
-        3) exit ;;
-        *) "Opcao desconhecida." ; echo ; Principal ;;
+     1) UnbanIP ;;
+     2) BanIP ;;
+     3) exit ;;
+     *) "Opcao desconhecida." ; echo ; Principal ;;
      esac
   }
 
