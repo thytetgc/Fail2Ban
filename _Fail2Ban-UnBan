@@ -5,9 +5,9 @@
 Principal() {
      clear
      dir="Diretorio Atual		: `pwd`"
-     kernel="Kernel				: `uname -r`"
-     arquitetura="Arquitetura	: `uname -m`"
-	 jails="Jails				: `fail2ban-client status`"
+     kernel="Kernel			: `uname -r`"
+     arquitetura="Arquitetura		: `uname -m`"
+     jails="Jails			: `fail2ban-client status`"
      
      echo "+-------------------------------------------------+"
      echo "|                 Fail2Ban Unban                  |"
