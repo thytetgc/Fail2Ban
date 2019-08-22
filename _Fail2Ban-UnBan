@@ -1,0 +1,69 @@
+#!/bin/bash
+# Versão 1.0 em 26/06/2019
+# -----------------------------------------------------
+#######################################################
+Principal() {
+     clear
+     dir="Diretorio Atual		: `pwd`"
+     kernel="Kernel				: `uname -r`"
+     arquitetura="Arquitetura	: `uname -m`"
+	 jails="Jails				: `fail2ban-client status`"
+     
+     echo "+-------------------------------------------------+"
+     echo "|                 Fail2Ban Unban                  |"
+     echo "+-------------------------------------------------+"
+     echo "| Escrito por:                                    |"
+     echo "| Thiago Castro - www.hostlp.net                  |"
+     echo "+-------------------------------------------------+"
+     echo
+     echo $dir
+     echo $kernel
+     echo $arquitetura
+	 echo $jails
+     echo
+     echo "Opcoes:"
+     echo "1. UnbanIP"
+	 echo "2. BanIP"
+	 echo "3. Sair"
+	 echo 
+     echo -n "Entre com a opcao desejada => "
+     read opcao
+     echo
+     case $opcao in
+        1) UnbanIP ;;
+		2) BanIP ;;
+        3) exit ;;
+        *) "Opcao desconhecida." ; echo ; Principal ;;
+     esac
+  }
+
+UnbanIP() {
+	 echo -n "Digite qual Jail:"
+     read jail
+     echo -n "Digite o IP para desbanir (ex: 187.1.1.1):"
+     read ip
+	 echo
+     echo "Mensagens do sistema: "
+     echo
+     fail2ban-client set $jail unbanip $ip
+     echo
+	 echo "Pressione qualquer tecla para continuar..."
+     read msg
+     Principal
+  }
+  
+BanIP() {
+	 echo -n "Digite qual Jail:"
+     read jail
+     echo -n "Digite o IP para desbanir (ex: 187.1.1.1):"
+     read ip
+	 echo
+     echo "Mensagens do sistema: "
+     echo
+     fail2ban-client set $jail banip $ip
+     echo
+	 echo "Pressione qualquer tecla para continuar..."
+     read msg
+     Principal
+  }
+Principal
