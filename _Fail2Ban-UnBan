@@ -10,7 +10,7 @@ Principal() {
 	 jails="Jails				: `fail2ban-client status`"
      
      echo "+-------------------------------------------------+"
-     echo "|                 Fail2Ban Unban                  |"
+     echo "|                 Fail2Ban Unban           v1.5   |"
      echo "+-------------------------------------------------+"
      echo "| Escrito por:                                    |"
      echo "| Thiago Castro - www.hostlp.net                  |"
